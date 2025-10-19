@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecomerce - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,700;1,5..1200,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 class="nombre-sitio">!Solicite <span>una  cita¡</span></h1>
+    </header>
+    <main class="contenido-principal contenedor">
+        <h2 class="text-center">Contacto</h2>
+
+        <form action="http://localhost:12345/api/Hospital" method="post"  class="formulario">
+            <fieldset>
+                    <legend>Tus Datos</legend>
+
+                    <div class="campo">
+                    <label for="name">Nombre:</label>
+                    <input class="input" type="text" name="name" id="name" placeholder="Tu nombre" required>
+                    </div>
+
+                    <div class="campo">
+                    <label for="apellido">Apellido:</label>
+                    <input class="input" type="text" name="apellido" id="apellido" placeholder="Apellido" required>
+                    </div>
+
+                    <div class="campo">
+                    <label for="email">Email:</label>
+                    <input class="input" type="email" name="email" id="email" placeholder="Tu Email">
+                    </div>
+                    
+                    <div class="campo">
+                    <label for="tel">Teléfono:</label>
+                    <input class="input" type="tel" name="tel" id="tel" placeholder="Tu Teléfono">
+                    </div>
+
+                    <div class="campo">
+                    <label for="textarea">Mensaje:</label>
+                    <textarea class="input" rows="10" cols="20" name="textarea" id="textarea" placeholder="Dejanos tu mensaje"></textarea>
+                    </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Pais</legend>
+                <div class="campo">
+                <label for="pais">Pais:</label>
+                <select name="pais" id="pais">
+                    <option value="MX">Mexico</option>
+                    <option value="PR">Peru</option>
+                    <option value="EEUU">Estados Unidos</option>
+                    <option value="CO">Colombia</option>
+                    <option value="RD">Republica Dominicana</option>
+                </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Informacion Extra</legend>
+                <div class="campo">
+                <label for="cliente">Cliente:</label>
+                <input type="radio" name="tipo" id="cliente">
+                </div>
+                
+                <div class="campo">
+                <label for="provedor">provedor:</label>
+                <input type="radio" name="tipo" id="provedor">
+                </div>
+                <div class="campo">
+                    <label for="categoria">Categoria de interes:</label>
+
+                    <input class="input" list="categorias" name="categoria">
+                    <datalist id="categorias">
+                        <option value="Cocina">
+                        <option value="Exterior ">
+                        <option value="Recamaras">
+                        <option value="Oficina">
+                        <option value="Television">
+                    </datalist>
+                </div>
+
+            </fieldset>
+            <input class="btn" type="submit" onclick="sendMail()" value="Enviar Formulario">
+        </form>
+        <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+    (function(){
+    emailjs.init({
+        publicKey: "6T8fqtKdzBVF30lRh",
+    });
+    })();
+</script>
+<script src="main.js"></script>
+    </main>
+</body>
+</html>
